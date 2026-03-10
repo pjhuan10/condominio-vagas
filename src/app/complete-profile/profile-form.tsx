@@ -3,7 +3,12 @@
 import { useActionState } from "react";
 import { saveProfile } from "./_actions/save-profile";
 
-const initialState = {};
+type FormState = {
+  error?: string;
+  success?: string;
+};
+
+const initialState: FormState = {};
 
 export default function CompleteProfileForm() {
   const [state, formAction, pending] = useActionState(saveProfile, initialState);
